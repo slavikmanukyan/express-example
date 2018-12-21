@@ -1,0 +1,14 @@
+extends layout.pug
+
+block head
+    title Users
+
+block content
+    ul
+        each user in users
+            li
+                span= user.name
+                -var delUrl = `/users/delete/${user.name}`
+                a(href=delUrl) Delete
+
+    a(href="/users/new") Create new user
