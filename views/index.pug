@@ -4,4 +4,10 @@ block head
     title Home
 
 block content
-    h1 Hello world
+    if user
+        h1
+            | Hello
+            span= ` ${user.name}`
+        a(href="/users/logout") Logout
+    else
+        h1 Hello world

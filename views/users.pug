@@ -4,10 +4,13 @@ block head
     title Users
 
 block content
+    h2
+        | Views
+        span= views
     ul
         each user in users
             li
-                span= user.name
+                span(style=`color: ${color}`)= user.name
                 -var delUrl = `/users/delete/${user.name}`
                 a(href=delUrl) Delete
 
